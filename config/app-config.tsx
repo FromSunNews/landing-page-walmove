@@ -2,8 +2,8 @@ export const APP_CONFIG = {
   name: "WALMOVE",
   description: "Cloud PC on Move",
   logo: "/logo/logo.png",
-  github: "https://github.com/shuding/nextra-docs-template",
-  discord: "https://discord.com",
+  github: "https://github.com/weminal-labs/walmove",
+  // discord: "https://discord.com",
   social: {
     facebook: "#",
     discord: "#",
