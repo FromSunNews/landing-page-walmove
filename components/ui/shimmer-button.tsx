@@ -29,6 +29,9 @@ const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
   ) => {
     return (
       <button
+        onClick={() => {
+          window.open("https://walmove-deploy.vercel.app/", "_blank");
+        }}
         style={
           {
             "--spread": "90deg",

@@ -122,12 +122,13 @@ export default function HeroVideoDialog({
             )}
             onClick={handleVideoClick}
           >
-            <iframe
+            {/* <iframe
               src={videoSrc}
               className="w-full h-full rounded-lg"
               allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
+            ></iframe> */}
+            <iframe src="https://www.veed.io/embed/b45a9ca2-18a7-4520-8df6-3798cf7ed4a5?watermark=0&color=&sharing=0&title=1" width="744" height="504" frameborder="0" title="WALMOVE" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div>
         </motion.div>
       </div>
