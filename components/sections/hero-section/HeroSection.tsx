@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
           <div className="text-7xl font-extrabold relative group inline-block">
             <BlurIn
               duration={1.25}
-              word="WALNET"
+              word="WALMOVE"
               className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"
             />
             <span className="absolute inset-0 blur-3xl bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-30 group-hover:opacity-50 transition-opacity duration-300"></span>
@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
           <BlurFade delay={0.25} duration={0.75} inView>
             <WordPullUp
               className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-wider adaptive-text"
-              words="Play AAA Games & Access dApps Seamlessly on the Aptos"
+              words="Play Games & Access dApps Seamlessly on the Move"
             />
           </BlurFade>
         </div>
@@ -58,7 +58,7 @@ const HeroSection: React.FC = () => {
         <div className='mb-[-10px]'>
           <BlurFade delay={0.25 * 7} inView>
             <p className="text-xl text-adaptive-text mb-12 max-w-3xl mx-auto">
-              Revolutionize your gaming and dApp experience with WALNET. Play AAA games and use dApps effortlessly from anywhere - all you need is an internet connection.
+              Revolutionize your gaming and dApp experience with WALMOVE. Play games and use dApps effortlessly from anywhere - all you need is an internet connection.
             </p>
           </BlurFade>
         </div>

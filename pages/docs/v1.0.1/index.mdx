@@ -2,9 +2,9 @@ import { Callout, Tabs } from 'nextra/components';
 
 # Your First Transaction
 
-This tutorial describes how to generate and submit transactions to the Aptos
+This tutorial describes how to generate and submit transactions to the Move
 blockchain, and verify these submitted transactions. The `transfer-coin` example
-used in this tutorial is built with the Aptos SDKs.
+used in this tutorial is built with the Move SDKs.
 
 ## Step 1: Pick an SDK
 
@@ -125,7 +125,7 @@ Bob's balance is: 1000000
 
 The above output demonstrates that the `transfer-coin` example executes the following steps:
 
-- Initializing the Aptos client.
+- Initializing the Move client.
 - The creation of two accounts: Alice and Bob.
 - The funding and creation of Alice's account from a faucet.
 - The transferring of 1000000 coins from Alice to Bob.
@@ -238,17 +238,17 @@ See the Rust [`transfer-coin`](https://github.com/aptos-labs/aptos-core/blob/mai
 <Tabs items={["TypeScript", "Python", "Rust"]}>
   <Tabs.Tab>
 
-In the first step, the `transfer_coin` example initializes the Aptos client:
+In the first step, the `transfer_coin` example initializes the Move client:
 
 ```ts filename="transfer_coin.ts"
 const APTOS_NETWORK: Network =
   NetworkToNetworkName[process.env.APTOS_NETWORK] || Network.DEVNET;
 const config = new AptosConfig({ network: APTOS_NETWORK });
-const aptos = new Aptos(config);
+const aptos = new Move(config);
 ```
 
 <Callout type="info">
-By default, the Aptos client points to Aptos devnet services. However, it can be configured with the `network` input argument
+By default, the Move client points to Move devnet services. However, it can be configured with the `network` input argument
 </Callout>
 
   </Tabs.Tab>
@@ -275,7 +275,7 @@ FAUCET_URL = os.getenv(
 
 <Callout type="info">
 
-By default, the URLs for both the services point to Aptos devnet services. However, they can be configured with the following environment variables:
+By default, the URLs for both the services point to Move devnet services. However, they can be configured with the following environment variables:
 
 - `APTOS_NODE_URL`
 - `APTOS_FAUCET_URL`
@@ -325,7 +325,7 @@ static FAUCET_URL: Lazy<Url> = Lazy::new(|| {
 
 <Callout type="info">
 
-By default, the URLs for both the services point to Aptos devnet services. However, they can be configured with the following environment variables:
+By default, the URLs for both the services point to Move devnet services. However, they can be configured with the following environment variables:
 
 - `APTOS_NODE_URL`
 - `APTOS_FAUCET_URL`
@@ -370,7 +370,7 @@ let bob = LocalAccount::generate(&mut rand::rngs::OsRng);
 
 ### Step 4.3: Creating blockchain accounts
 
-In Aptos, each account must have an on-chain representation in order to receive tokens and coins and interact with other dapps. An account represents a medium for storing assets; hence, it must be explicitly created. This example leverages the Faucet to create and fund Alice's account and to create but not fund Bob's account:
+In Move, each account must have an on-chain representation in order to receive tokens and coins and interact with other dapps. An account represents a medium for storing assets; hence, it must be explicitly created. This example leverages the Faucet to create and fund Alice's account and to create but not fund Bob's account:
 
 <Tabs items={["TypeScript", "Python", "Rust"]}>
   <Tabs.Tab>
@@ -492,7 +492,7 @@ let balance = self
 
 ### Step 4.5: Transferring
 
-Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. The SDK provides a helper function to generate a `transferCoinTransaction` transaction that can be simulated or submitted to chain. Once a transaction has been submitted to chain, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Aptos blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
+Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. The SDK provides a helper function to generate a `transferCoinTransaction` transaction that can be simulated or submitted to chain. Once a transaction has been submitted to chain, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Move blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
 <Tabs items={["TypeScript", "Python", "Rust"]}>
 <Tabs.Tab>
 
@@ -538,14 +538,14 @@ export async function transferCoinTransaction(args: {
 
 Breaking the above down into pieces:
 
-1. `transfer_coins` internally is a `EntryFunction` in the [Aptos Account Move module](https://github.com/aptos-labs/aptos-core/blob/main/aptos-move/framework/aptos-framework/sources/aptos_account.move#L92), i.e. an entry function in Move that is directly callable.
+1. `transfer_coins` internally is a `EntryFunction` in the [Move Account Move module](https://github.com/aptos-labs/aptos-core/blob/main/aptos-move/framework/aptos-framework/sources/aptos_account.move#L92), i.e. an entry function in Move that is directly callable.
 2. The Move function is stored on the aptos_account module: `0x1::aptos_account`.
 3. The `transfer_coins` functions uses the [Coin Move module](https://github.com/aptos-labs/aptos-core/blob/main/aptos-move/framework/aptos-framework/sources/coin.move)
 4. Because the Coin module can be used by other coins, the `transferCoinTransaction` must explicitly specify which coin type to transfer. If not specified with `coinType` it defaults to `0x1::aptos_coin::AptosCoin`.
 
   </Tabs.Tab>
   <Tabs.Tab>
-Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. For correctly generated transactions, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Aptos blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
+Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. For correctly generated transactions, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Move blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
 
 ```python filename="example.py"
 txn_hash = await rest_client.transfer(alice, bob.address(), 1_000)
@@ -588,7 +588,7 @@ Breaking the above down into pieces:
 
   </Tabs.Tab>
   <Tabs.Tab>
-Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. For correctly generated transactions, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Aptos blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
+Like the previous step, this is another helper step that constructs a transaction transferring the coins from Alice to Bob. For correctly generated transactions, the API will return a transaction hash that can be used in the subsequent step to check on the transaction status. The Move blockchain does perform a handful of validation checks on submission; and if any of those fail, the user will instead be given an error. These validations use the transaction signature and unused sequence number, and submitting the transaction to the appropriate chain.
 
 ```rust filename="example.rs"
 let txn_hash = coin_client

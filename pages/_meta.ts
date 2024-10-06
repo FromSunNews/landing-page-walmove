@@ -1,18 +1,20 @@
 const meta = {
   "index": {
     type: "page",
-    title: "About WALNET",
+    title: "About WALMOVE",
     theme: {
       layout: "raw"
     }
   },
   "user-guide": {
     type: "page",
-    title: "User Guide"
+    title: "User Guide",
+    display: 'hidden',
   },
   "docs": {
     type: "menu",
     title: "Documentation",
+    display: 'hidden',
     items: {
       "v1.0.1": {
         title: "v1.0.1",

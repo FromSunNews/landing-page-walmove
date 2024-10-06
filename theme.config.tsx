@@ -41,17 +41,6 @@ const config: DocsThemeConfig = {
   },
   logoLink: false,
   logo: function useRouterLogo() {
-    const [renderSelect, setRenderSelect] = useState(false);
-    const router = useRouter();
-
-    useEffect(() => {
-      const shouldRenderSelect = router.pathname.startsWith('/docs') &&
-        !router.pathname.startsWith('/docs/user-guide');
-      console.log('Current path:', router.pathname);
-      console.log('Should render select:', shouldRenderSelect);
-      setRenderSelect(shouldRenderSelect);
-    }, [router.pathname]);
-
     return (
       <div className='flex flex-row items-center'>
         <Link href="/" className="hidden sm:flex items-center text-current no-underline hover:opacity-75 ltr:mr-auto rtl:ml-auto">
@@ -68,6 +57,9 @@ const config: DocsThemeConfig = {
             </span>
           </div> */}
           <Image src={APP_CONFIG.logo} alt="logo" width={35} height={35} />
+          <span className="ms-2 text-xl font-extrabold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">
+            WALMOVE
+          </span>
         </Link>
       </div>
     );

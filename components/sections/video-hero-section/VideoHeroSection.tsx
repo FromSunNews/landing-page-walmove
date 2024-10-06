@@ -22,7 +22,7 @@ export default function VideoHeroSection() {
         )}
       />
       <VelocityScroll
-        text="Walnet In Action"
+        text="Walmove In Action"
         default_velocity={2}
         className="font-display adaptive-text text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-6xl md:leading-[5rem]"
       />
@@ -48,7 +48,7 @@ export default function VideoHeroSection() {
         animationStyle="from-center"
         videoSrc="https://www.youtube.com/embed/58L9HJXTgUI?si=n7hOnnhdkNxmldYH"
         thumbnailSrc="assets/about/thumbnail_video.png"
-        thumbnailAlt="Walnet Demo Video"
+        thumbnailAlt="Walmove Demo Video"
       />
     </section>
   );

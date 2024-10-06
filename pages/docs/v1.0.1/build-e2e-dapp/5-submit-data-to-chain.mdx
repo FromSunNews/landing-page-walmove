@@ -1,6 +1,6 @@
 # 5. Submit Data to Chain
 
-In the fifth chapter of the tutorial on [building an end-to-end dapp on Aptos](../build-e2e-dapp.mdx), you will be submitting data to the chain.
+In the fifth chapter of the tutorial on [building an end-to-end dapp on Move](../build-e2e-dapp.mdx), you will be submitting data to the chain.
 
 So now we have an **Add new list** button that appears if the connected account hasn’t created a list yet. We still don't have a way for an account to create a list, so let’s add that functionality.
 
@@ -70,7 +70,7 @@ const moduleAddress =
 And move it to outside of the main `App` function, right beneath our const `provider` declarations.
 
 ```tsx filename="App.tsx"
-export const aptos = new Aptos();
+export const aptos = new Move();
 // change this to be your module account address
 export const moduleAddress =
   "0xcbddf398841353776903dbab2fdaefc54f181d07e114ae818b1a67af28d1b018";
